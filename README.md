@@ -7,8 +7,8 @@ Cloud configuration system written in MySQL, ExpressJS & NodeJS made for other d
 Install packages with npm.
 
 ```bash
-  cd cloud-configs-master
-  npm install
+ > cd cloud-configs-master
+ > npm install
 ```
 
 Import schema.sql.
@@ -30,8 +30,8 @@ DB_PORT=
 
 #### Get all items
 
-```http
-  GET /api/get
+```
+GET /api/get
 ```
 
 | Parameter | Type     | Description                 |
@@ -40,16 +40,16 @@ DB_PORT=
 
 #### Get item
 
-```http
-  GET /api/get/${id}
+```
+GET /api/get/${id}
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `string` | **Required**. Id of item to fetch |
 
-```http
-  POST /api/create
+```
+ POST /api/create
 ```
 
 | Parameter | Type     | Description                         |
@@ -60,8 +60,8 @@ DB_PORT=
 
 #### Get item
 
-```http
-  PUT /api/update/${id}
+```
+ PUT /api/update/${id}
 ```
 
 | Parameter | Type     | Description                        |
@@ -69,8 +69,8 @@ DB_PORT=
 | `id`      | `string` | **Required**. Id of item to update |
 | `content` | `string` | **Required**. Content to update to |
 
-```http
-  DELETE /api/delete/${id}
+```
+DELETE /api/delete/${id}
 ```
 
 | Parameter | Type     | Description                        |
