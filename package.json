@@ -1,0 +1,37 @@
+{
+    "name": "expressjs-structure",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/geshan/expressjs-structure.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/geshan/expressjs-structure/issues"
+    },
+    "homepage": "https://github.com/geshan/expressjs-structure#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "fs": "^0.0.1-security",
+        "mysql2": "^2.3.3",
+        "uuid": "^9.0.0"
+    },
+    "devDependencies": {
+        "jest": "^27.4.5"
+    },
+    "jest": {
+        "testEnvironment": "node",
+        "coveragePathIgnorePatterns": [
+            "/node_modules/"
+        ],
+        "testRegex": "(/test/.*|(\\.|/)(test))\\.(js)x?$"
+    }
+}
