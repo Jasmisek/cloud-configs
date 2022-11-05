@@ -7,7 +7,7 @@ Cloud configuration system written in MySQL, ExpressJS & NodeJS made for other d
 Install packages with npm.
 
 ```bash
- > cd cloud-configs-master
+ > cd cloud-configs-main
  > npm install
 ```
 
