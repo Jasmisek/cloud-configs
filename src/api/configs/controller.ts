@@ -1,4 +1,4 @@
-const config = require("../services/config.service")
+/*import { config } from "../services/config-service"
 
 async function getMultiple(req, res, next) {
     try {
@@ -51,4 +51,40 @@ module.exports = {
     create,
     update,
     remove,
+}
+*/
+
+import service from "./service"
+import { Request, Response } from "express"
+
+export default {
+    getMultiple: async (req: Request, res: Response) => {
+        const config = await service.getMultiple(req.body)
+        res.json({ response: config })
+    },
+
+    getSingle: async (req: Request, res: Response) => {
+        const id: string = req.params.id as string
+
+        const config = await service.getSingle(id)
+        res.json({ response: config })
+    },
+
+    create: async (req: Request, res: Response) => {
+        const config = await service.create(req.body)
+        res.json({ response: config })
+    },
+
+    update: async (req: Request, res: Response) => {
+        const id: string = req.params.id as string
+
+        const config = await service.update(req.body, id)
+        res.json({ response: config })
+    },
+
+    delete: async (req: Request, res: Response) => {
+        const id: string = req.params.id as string
+        const config = await service.delete(id)
+        res.json({ response: config })
+    },
 }

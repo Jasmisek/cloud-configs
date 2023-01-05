@@ -7,25 +7,13 @@ Cloud configuration system written in MySQL, ExpressJS & NodeJS made for other d
 Install packages with npm.
 
 ```bash
- > cd cloud-configs-main
+ > cd cloud-configs-master
  > npm install
 ```
 
-Import schema.sql.
-
-## 🔒 Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
+```bash
+ > npm run db:dev
 ```
-# MySQL details
-DB_HOST=
-DB_USER=
-DB_PASSWORD=
-DB_NAME=
-DB_PORT=
-```
-
 ## 💻 API Reference
 
 #### Get all items
