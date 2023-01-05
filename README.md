@@ -11,8 +11,10 @@ Install packages with npm.
  > npm install
 ```
 
+Upload tables to database.
+
 ```bash
- > npm run db:dev
+ > npm run db:push
 ```
 ## 💻 API Reference
 
