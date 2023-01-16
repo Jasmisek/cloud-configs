@@ -64,7 +64,7 @@ export default {
     },
 
     getSingle: async (req: Request, res: Response) => {
-        const id: string = req.params.id as string
+        const id: string = req.params.id
 
         const config = await service.getSingle(id)
         res.json({ response: config })
@@ -76,15 +76,12 @@ export default {
     },
 
     update: async (req: Request, res: Response) => {
-        const id: string = req.params.id as string
-
-        const config = await service.update(req.body, id)
+        const config = await service.update(req.body)
         res.json({ response: config })
     },
 
     delete: async (req: Request, res: Response) => {
-        const id: string = req.params.id as string
-        const config = await service.delete(id)
+        const config = await service.delete(req.body)
         res.json({ response: config })
     },
 }

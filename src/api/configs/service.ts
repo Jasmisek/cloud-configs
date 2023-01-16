@@ -3,21 +3,28 @@ import { v4 as uuidv4 } from "uuid"
 import { emptyOrRows } from "../../utils/helper.util"
 const prisma = new PrismaClient()
 
+interface config {
+    id: string
+    user: string
+    name: string
+    content: string
+}
+
 export default {
     /* 
     Get config logic.
     */
-    getMultiple: async (body: any) => {
+    getMultiple: async ({ user }: config) => {
         const config = prisma.configs.findMany({
             where: {
-                user: body.user,
+                user: user,
             },
         })
 
         return emptyOrRows(config)
     },
 
-    getSingle: async (id: string) => {
+    getSingle: async (id: any) => {
         const config = prisma.configs.findUnique({
             where: {
                 id: id,
@@ -26,36 +33,36 @@ export default {
         return config
     },
 
-    create: async (body: any) => {
+    create: async ({ user, name, content }: config) => {
         const config = await prisma.configs.create({
             data: {
                 id: uuidv4(),
-                user: body.user,
-                name: body.name,
-                content: body.content,
+                user: user,
+                name: name,
+                content: content,
             },
         })
         return config
     },
 
-    update: async (body: any, id: string) => {
+    update: async ({ id, content }: config) => {
         const config = await prisma.configs.update({
             where: {
-                id: id
+                id: id,
             },
             data: {
-                content: body.content
-            }
+                content: content,
+            },
         })
         return config
     },
 
-    delete: async (id: string) => {
-        const config = await prisma.configs.delete({
+    delete: async ({ id }: config) => {
+        await prisma.configs.delete({
             where: {
-                id: id
+                id: id,
             },
         })
         return "Succesfully deleted config!"
-    }
+    },
 }

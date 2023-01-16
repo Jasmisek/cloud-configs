@@ -16,6 +16,7 @@ Upload tables to database.
 ```bash
  > npm run db:push
 ```
+
 ## 💻 API Reference
 
 #### Get all items
@@ -51,7 +52,7 @@ GET /api/get/${id}
 #### Get item
 
 ```
- PUT /api/update/${id}
+ PUT /api/update/
 ```
 
 | Parameter | Type     | Description                        |
@@ -60,7 +61,7 @@ GET /api/get/${id}
 | `content` | `string` | **Required**. Content to update to |
 
 ```
-DELETE /api/delete/${id}
+DELETE /api/delete/
 ```
 
 | Parameter | Type     | Description                        |
